@@ -1,0 +1,23 @@
+// Clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Uppercase Text
+%uppercase {
+  text-transform: uppercase;
+}
+
+// Margin
+%margin {
+  margin: 40px 0 10px;
+}
+
+// Bold font
+%bold {
+  font-weight: bold;
+}
