@@ -24,27 +24,71 @@ header {
   h1 {
     padding: 10px;
     @extend %bold;
+
+    @include mediaQueryBreakpoint(medium) {
+      padding: 0;
+    }
   }
 }
 
-.main-nav {
-  display: flex;
-  flex-direction: column;
-}
+.intro {
+  img {
+    @extend %margin;
+    width: 70%;
+    max-height: 255px;
+  }
 
-.intro img {
-  @extend %margin;
-  width: 70%;
-  max-height: 255px;
-  /*border: 10px solid blue;*/
+  @include mediaQueryBreakpoint(medium) {
+    & {
+      display: flex;
+
+      img {
+        width: 45%;
+        margin: 30px 0;
+        padding: 0 5px;
+      }
+
+      p {
+        order: -1;
+        width: 55%;
+        text-align: left;
+        margin: 30px 0;
+        padding: 0 5px;
+      }
+    }
+  }
+
+  @include mediaQueryBreakpoint(large) {
+    & {
+      p {
+        padding-right: 20px;
+      }
+
+      img {
+        padding-left: 20px;
+      }
+    }
+  }
 }
 
 .col {
   @extend %margin;
-}
 
-.main-contact {
-  min-height: calc(100vh - 301.978px - 133.3438px);
+  @include mediaQueryBreakpoint(medium) {
+    & {
+      width: 50%;
+      padding: 0 5px;
+
+      p {
+        width: 90%;
+        margin: auto;
+      }
+    }
+  }
+
+  @include mediaQueryBreakpoint(large) {
+    width: calc(100% / 3);
+  }
 }
 
 .contact-info {
@@ -53,4 +97,27 @@ header {
 
 .contact-message {
   padding: 10px 0;
+
+  @include mediaQueryBreakpoint(medium) {
+      width: 70%;
+      margin: auto;
+  }
+
+  @include mediaQueryBreakpoint(large) {
+    width: 50%;
+  }
+}
+
+@include mediaQueryBreakpoint(medium) {
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+@include mediaQueryBreakpoint(large) {
+  .container {
+    width: 90%;
+    margin: auto;
+  }
 }

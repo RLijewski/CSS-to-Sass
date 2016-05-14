@@ -1,0 +1,33 @@
+.main-nav {
+  display: flex;
+  flex-direction: column;
+
+  li {
+    @extend %uppercase;
+    background: $white;
+    padding: 15px 5px;
+    margin-bottom: 5px;
+    @extend %bold;
+  }
+
+  @include mediaQueryBreakpoint(medium) {
+    & {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+
+      li {
+        background: none;
+        margin-left: 30px;
+      }
+    }
+  }
+}
+
+@include mediaQueryBreakpoint(large) {
+  .nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}

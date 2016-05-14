@@ -1,14 +1,29 @@
-.contact-footer {
-  padding-top: 60px;
-}
-
 .footer-controls {
   display: flex;
   justify-content: space-between;
   border-top: 1px solid $grey;
   padding: 5px 0;
+
+  @include mediaQueryBreakpoint(medium) {
+    & {
+      .important {
+        display: none;
+      }
+    }
+  }
 }
 
 .footer-nav {
   display: none;
+
+  @include mediaQueryBreakpoint(medium) {
+    & {
+      display: flex;
+      align-items: center;
+
+      li {
+        margin-left: 20px;
+      }
+    }
+  }
 }
